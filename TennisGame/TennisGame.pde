@@ -1,10 +1,10 @@
-import ddf.minim.*;
+//import ddf.minim.*;
 import processing.serial.*;
 
 String arduino = "COM27"; //com port name from arduino
 Serial serial;
-Minim minim;
-AudioPlayer wallSound, batSound;
+//Minim minim;
+//AudioPlayer wallSound, batSound;
 PImage ball, bat, back;
 float leftBatPosition, rightBatPosition;
 float ballX, ballY;
@@ -23,9 +23,9 @@ void setup()
   ball = loadImage("ball.png");
   bat = loadImage("bat.png");
   back = loadImage("back.png");
-  minim = new Minim(this);
-  wallSound = minim.loadFile("wall.mp3");
-  batSound = minim.loadFile("bat.mp3");
+//  minim = new Minim(this);
+//  wallSound = minim.loadFile("wall.mp3");
+//  batSound = minim.loadFile("bat.mp3");
   leftBatPosition = bat.height/2;
   rightBatPosition = bat.height/2;
   resetBall();
@@ -150,15 +150,15 @@ void hitBall(float spin)
   horiSpeed = -horiSpeed;
   ballX += horiSpeed;
   vertSpeed = -spin/10;
-  batSound.rewind();
-  batSound.play();
+//  batSound.rewind();
+//  batSound.play();
 }
 
 void wallBounce()
 {
   vertSpeed = -vertSpeed;
-  wallSound.rewind();
-  wallSound.play();
+//  wallSound.rewind();
+//  wallSound.play();
 }
 
 void connectArduino()
